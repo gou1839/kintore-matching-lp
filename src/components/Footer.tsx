@@ -24,7 +24,7 @@ export default function Footer() {
                 className="text-2xl font-bold"
                 style={{ color: "var(--color-primary)" }}
               >
-                筋トレマッチング
+                筋トレマッチング(仮称)
               </span>
             </div>
             <p className="text-gray-400 mb-4">
@@ -90,7 +90,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
           <p>
-            © {currentYear} 筋トレマッチングアプリ. All rights reserved.
+            © {currentYear} 合トレ仲間探し. All rights reserved.
           </p>
         </div>
       </div>

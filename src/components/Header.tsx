@@ -21,7 +21,7 @@ export default function Header() {
           <div className="flex items-center space-x-2">
             <div className="text-2xl">🏋️</div>
             <span className="text-xl font-bold" style={{ color: "var(--color-primary)" }}>
-              筋トレマッチング
+              筋トレマッチング(仮称)
             </span>
           </div>
 

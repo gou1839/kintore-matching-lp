@@ -28,7 +28,7 @@ export default function FeaturesSection() {
             選ばれる3つの理由
           </h2>
           <p className="text-gray-600">
-            筋トレマッチングアプリの主要な特徴
+            合トレ仲間探し・筋トレマッチングアプリの主要な特徴
           </p>
         </div>
 

@@ -27,10 +27,10 @@ export default function SolutionSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            筋トレマッチングアプリが解決します
+            合トレ仲間探しアプリが解決します
           </h2>
           <p className="text-gray-600">
-            あなたの悩みを解決する5つの機能
+            筋トレマッチングであなたの悩みを解決する5つの機能
           </p>
         </div>
 
