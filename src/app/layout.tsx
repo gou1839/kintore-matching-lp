@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-// サイトURL（本番環境のURLに変更してください）
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kintore-matching.com";
+// サイトURL（本番環境のURL）
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kintore-matching-lp.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -109,11 +109,10 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   
-  // 検証タグ（後で追加）
-  // verification: {
-  //   google: "your-google-verification-code",
-  //   yandex: "your-yandex-verification-code",
-  // },
+  // 検証タグ
+  verification: {
+    google: "oBxmHnUp-pUnFKNsVVsSbDXK3gX4-hjawCskDP10Z0g",
+  },
   
   // ロボット制御
   robots: {
