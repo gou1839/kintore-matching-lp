@@ -1,0 +1,25 @@
+# robots.txt for 筋トレマッチングアプリ
+
+# すべてのクローラーに対する設定
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# サイトマップの場所
+Sitemap: https://kintore-matching.com/sitemap.xml
+
+# 主要な検索エンジン向けの最適化
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# クロール頻度の調整（サーバー負荷軽減）
+Crawl-delay: 1
+
