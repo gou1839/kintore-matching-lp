@@ -123,7 +123,7 @@ export const metadata: Metadata = {
   // アプリアイコン
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
   
   // 検証タグ

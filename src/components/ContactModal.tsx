@@ -12,7 +12,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
   // メールアドレスをJavaScriptで動的に生成（クローラー対策）
   const getEmail = () => {
-    const user = "kawachi2008+kintore";
+    const user = "kawachi20018+kintore";
     const domain = "gmail.com";
     return `${user}@${domain}`;
   };
