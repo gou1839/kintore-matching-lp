@@ -52,10 +52,12 @@ export default function PrivacyPage() {
               </p>
               <ol className="list-decimal list-inside space-y-2">
                 <li>
-                  <strong>登録情報</strong>
+                  <strong>LINE Loginを通じて取得する情報</strong>
                   <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                    <li>メールアドレス</li>
-                    <li>パスワード（暗号化して保存）</li>
+                    <li>LINE内部識別子（ユーザーID）</li>
+                    <li>表示名</li>
+                    <li>プロフィール画像</li>
+                    <li>メールアドレス（ユーザーが許可した場合）</li>
                   </ul>
                 </li>
                 <li>
@@ -77,12 +79,6 @@ export default function PrivacyPage() {
                   </ul>
                 </li>
                 <li>
-                  <strong>メッセージ情報</strong>
-                  <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                    <li>ユーザー間のメッセージ内容</li>
-                  </ul>
-                </li>
-                <li>
                   <strong>利用状況情報</strong>
                   <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
                     <li>アクセスログ</li>
@@ -93,6 +89,9 @@ export default function PrivacyPage() {
                   </ul>
                 </li>
               </ol>
+              <p className="mt-4 text-sm text-gray-600">
+                ※本サービスは独自のチャット機能を提供しておらず、マッチング後のメッセージのやり取りはLINEオープンチャットを使用します。そのため、本サービス内でメッセージ情報を収集・保存することはありません。
+              </p>
             </section>
 
             <section>
@@ -127,27 +126,36 @@ export default function PrivacyPage() {
                 className="text-2xl font-bold mb-4"
                 style={{ color: "var(--color-primary)" }}
               >
-                第3条（LINEオープンチャットへの誘導について）
+                第3条（LINE Loginおよびチャット機能について）
               </h2>
+              <h3 className="text-lg font-semibold mb-2 mt-4">3-1. LINE Loginについて</h3>
               <ol className="list-decimal list-inside space-y-2">
                 <li>
-                  本サービスでは、コミュニティ機能の一環として、LINEオープンチャット（以下「LINE
-                  OC」といいます）への誘導を行う場合があります。
+                  本サービスは、ユーザー認証にLINEヤフー株式会社が提供する「LINE Login」を使用します。
                 </li>
                 <li>
-                  LINE
-                  OCへの参加は任意であり、参加しない場合でも本サービスの基本機能は利用可能です。
+                  LINE Loginを通じて取得する情報は、LINEヤフー株式会社のプライバシーポリシーに基づき管理されます。
                 </li>
                 <li>
-                  LINE OCに参加する場合、LINEアプリおよびLINE
-                  OCのプライバシーポリシーが適用されます。
+                  運営者は、LINE Loginを通じて提供された情報を、本ポリシーに定める目的の範囲内で利用します。
+                </li>
+              </ol>
+              <h3 className="text-lg font-semibold mb-2 mt-4">3-2. LINEオープンチャット（チャット機能）について</h3>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>
+                  本サービスでは、マッチング成立後のコミュニケーション手段として、LINEヤフー株式会社が提供する「LINEオープンチャット」（以下「LINE OC」といいます）を使用します。
                 </li>
                 <li>
-                  LINE
-                  OC内での情報については、運営者ではなくLINE株式会社の管理下となります。
+                  本サービスは独自のチャット機能を提供しておらず、ユーザー間のメッセージのやり取りはすべてLINE OCを通じて行われます。
                 </li>
                 <li>
-                  運営者は、LINE OC内でのユーザーの個人情報の取扱いについて、責任を負いません。
+                  LINE OCに参加する場合、LINEアプリおよびLINE OCのプライバシーポリシーが適用されます。
+                </li>
+                <li>
+                  LINE OC内での情報（メッセージ、画像、その他の投稿内容）については、運営者ではなくLINEヤフー株式会社の管理下となります。
+                </li>
+                <li>
+                  運営者は、LINE OC内でのユーザーの個人情報の取扱いや、ユーザー間でやり取りされる情報について、収集・保存・管理を行わず、一切の責任を負いません。
                 </li>
               </ol>
             </section>
@@ -178,9 +186,19 @@ export default function PrivacyPage() {
                 <li>
                   本サービスでは、以下のサービスを利用しており、これらのサービス提供者に情報が共有される場合があります。
                   <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
+                    <li>LINEヤフー株式会社（LINE Login、LINEオープンチャット）
+                      <ul className="list-circle list-inside ml-6 mt-1 text-sm space-y-1">
+                        <li>認証サービス（LINE Login）の提供のため</li>
+                        <li>チャット機能（LINEオープンチャット）の利用のため</li>
+                        <li>詳細はLINEヤフー株式会社のプライバシーポリシーをご確認ください</li>
+                      </ul>
+                    </li>
                     <li>Supabase（データベース・認証サービス）</li>
                     <li>Vercel（ホスティングサービス）</li>
                   </ul>
+                </li>
+                <li>
+                  LINE Loginを利用することで、LINEアカウントの情報が本サービスおよびLINEヤフー株式会社と共有されることに同意したものとみなします。
                 </li>
               </ol>
             </section>

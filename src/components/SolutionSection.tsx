@@ -58,18 +58,6 @@ export default function SolutionSection() {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <button
-            className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
-            style={{
-              backgroundColor: "var(--color-primary)",
-              borderRadius: "var(--rounded-btn)",
-            }}
-          >
-            テストユーザーに応募する →
-          </button>
-        </div>
       </div>
     </section>
   );

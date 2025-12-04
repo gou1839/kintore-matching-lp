@@ -40,15 +40,18 @@ export default function CTASection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <button
-              className="px-10 py-5 text-lg font-bold bg-white shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all"
+            <a
+              href="https://forms.gle/JpdtNtXvovME2iPa8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-5 text-lg font-bold bg-white shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all text-center"
               style={{
                 color: "var(--color-primary)",
                 borderRadius: "var(--rounded-btn)",
               }}
             >
               クローズドテストに応募する →
-            </button>
+            </a>
           </div>
 
           <p className="text-sm opacity-75">

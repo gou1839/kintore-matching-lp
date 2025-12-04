@@ -42,15 +42,18 @@ export default function HeroSection() {
               テストユーザーとして参加いただける方を募集しています！
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button
-                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
+              <a
+                href="https://forms.gle/JpdtNtXvovME2iPa8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all text-center"
                 style={{
                   backgroundColor: "var(--color-primary)",
                   borderRadius: "var(--rounded-btn)",
                 }}
               >
                 クローズドテストに応募する →
-              </button>
+              </a>
               <button
                 onClick={scrollToScreenshots}
                 className="px-8 py-4 text-lg font-semibold border-2 hover:bg-gray-50 transition-all"

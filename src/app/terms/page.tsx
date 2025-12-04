@@ -69,7 +69,8 @@ export default function TermsPage() {
               </h2>
               <ol className="list-decimal list-inside space-y-2">
                 <li>本サービスの利用を希望する方は、本規約を遵守することに同意し、運営者の定める方法によって利用登録を申請するものとします。</li>
-                <li>登録には有効なメールアドレスが必要です。</li>
+                <li>本サービスの登録および認証には、LINEヤフー株式会社が提供する「LINE Login」を使用します。本サービスを利用するには、LINEアカウントが必要です。</li>
+                <li>LINE Loginを通じて、LINEアカウントに登録されている情報（ユーザー識別子、表示名、プロフィール画像など）が本サービスに提供されることに同意するものとします。</li>
                 <li>運営者は、登録申請者が以下のいずれかに該当する場合、登録を承認しないことがあります。
                   <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
                     <li>本規約に違反したことがある者からの申請である場合</li>
@@ -83,14 +84,14 @@ export default function TermsPage() {
 
             <section>
               <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--color-primary)" }}>
-                第4条（LINEオープンチャットの利用）
+                第4条（チャット機能・LINEオープンチャットの利用）
               </h2>
               <ol className="list-decimal list-inside space-y-2">
-                <li>本サービスでは、コミュニケーションの手段としてLINEオープンチャット（以下「LINE OC」といいます）を利用することがあります。</li>
-                <li>LINE OCの利用は任意ですが、本サービスの機能を十分に活用するために推奨されます。</li>
-                <li>LINE OCの利用にあたっては、LINEの利用規約およびLINE OCの利用規約が適用されます。</li>
+                <li>本サービスでは、マッチング成立後のユーザー間のコミュニケーション手段として、LINEヤフー株式会社が提供する「LINEオープンチャット」（以下「LINE OC」といいます）を使用します。</li>
+                <li>本サービスは独自のチャット機能を提供しておらず、マッチング後のメッセージのやり取りはLINE OCを通じて行っていただきます。</li>
+                <li>LINE OCを利用するには、LINEアカウントが必要です。LINE OCの利用にあたっては、LINEの利用規約およびLINE OCの利用規約が適用されます。</li>
                 <li>LINE OC内での行動についても、本規約の禁止事項が適用されます。</li>
-                <li>運営者は、LINE OC内でのユーザー間のトラブルについて、一切の責任を負いません。</li>
+                <li>LINE OC内での情報のやり取りは、LINEヤフー株式会社の管理下となります。運営者は、LINE OC内でのユーザー間のトラブルや個人情報の取扱いについて、一切の責任を負いません。</li>
               </ol>
             </section>
 
