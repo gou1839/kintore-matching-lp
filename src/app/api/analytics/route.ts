@@ -1,37 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { createClient } from 'redis';
 
-// データファイルのパス
-const DATA_FILE = path.join(process.cwd(), 'data', 'analytics.json');
+// Redisクライアントのシングルトン（接続を再利用）
+let redisClient: ReturnType<typeof createClient> | null = null;
 
-// データファイルの初期化（存在しない場合）
-async function ensureDataFile() {
-  try {
-    await fs.access(DATA_FILE);
-  } catch {
-    // ファイルが存在しない場合は作成
-    const dir = path.dirname(DATA_FILE);
-    await fs.mkdir(dir, { recursive: true });
-    await fs.writeFile(DATA_FILE, JSON.stringify({}), 'utf-8');
+// Redisクライアントを取得（接続済みの場合は再利用）
+async function getRedisClient() {
+  if (!redisClient) {
+    redisClient = createClient({ url: process.env.REDIS_URL });
+    redisClient.on('error', (err) => console.error('Redis Client Error', err));
+    await redisClient.connect();
   }
-}
-
-// カウントデータの読み込み
-async function readCounts() {
-  await ensureDataFile();
-  try {
-    const data = await fs.readFile(DATA_FILE, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    return {};
-  }
-}
-
-// カウントデータの保存
-async function writeCounts(counts: Record<string, number>) {
-  await ensureDataFile();
-  await fs.writeFile(DATA_FILE, JSON.stringify(counts, null, 2), 'utf-8');
+  return redisClient;
 }
 
 // POST: カウントアップ
@@ -46,19 +26,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const counts = await readCounts();
-    counts[source] = (counts[source] || 0) + 1;
-    await writeCounts(counts);
+    const redis = await getRedisClient();
+    const key = `analytics:${source}`;
+    const count = await redis.incr(key);
 
     return NextResponse.json({ 
       success: true, 
-      count: counts[source],
+      count,
       source 
     });
   } catch (error) {
     console.error('Analytics error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
@@ -67,12 +47,26 @@ export async function POST(request: NextRequest) {
 // GET: カウント取得
 export async function GET() {
   try {
-    const counts = await readCounts();
+    const redis = await getRedisClient();
+    const keys = await redis.keys('analytics:*');
+    const counts: Record<string, number> = {};
+    
+    // 各キーの値を取得
+    if (keys && keys.length > 0) {
+      const values = await redis.mGet(keys);
+      
+      keys.forEach((key, index) => {
+        const source = key.replace('analytics:', '');
+        const count = values[index] ? parseInt(values[index] as string, 10) : 0;
+        counts[source] = count;
+      });
+    }
+    
     return NextResponse.json({ counts });
   } catch (error) {
     console.error('Analytics error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
